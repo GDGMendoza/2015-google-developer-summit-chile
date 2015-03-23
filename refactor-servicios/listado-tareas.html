@@ -1,0 +1,5 @@
+<div ng-repeat="tarea in tareas">
+    <input type="checkbox" ng-model="tarea.realizada"><a ng-href="#/tarea/{{$index}}">{{tarea.descripcion}}</a>
+</div>
+<a ng-href="#/tarea/">Agregar nueva tarea</a>
+<button ng-click="eliminarFinalaizadas()">Eliminar tareas finalizadas</button>
