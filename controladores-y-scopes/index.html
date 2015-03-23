@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/lodash/lodash.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-controller="Tareas">
-    <label><input type="text" ng-model="nuevaTarea">{{nuevaTarea}}</label>
-    <br><br>
-    <button ng-click="agregarNuevaTarea()">Agregar tarea</button>
-    <br><br><hr>
-    <button ng-click="actualizarListadoDesdeServidor()">Recargar listado desde servidor</button>
-    <br>
-    <label ng-repeat="tarea in listadoTareas">
-        <br><input type="checkbox" ng-model="tarea.realizada">{{tarea.descripcion}}
-    </label>
+<body>
+<div ng-controller="Tareas">
+    <div ng-if="listadoTareas.length">
+        <h1>Listado de tareas!</h1>
+        <ul>
+            <li ng-repeat="tarea in listadoTareas">
+                <label><input type="checkbox" ng-model="tarea.realizada">{{tarea.descripcion}}</label>
+            </li>
+        </ul>
+        <button ng-click="eliminarTareasFinalizadas()">Eliminar finalizadas</button>
+        <br/>
+    </div>
+    <div>
+        <h1>Nueva tarea:</h1>
+        <label>Descripcion: <input type="text" ng-model="nuevaTarea.descripcion"></label>
+        <button ng-click="agregarNuevaTarea()">Agregar Tarea</button>
+    </div>
+    <button ng-click="actualizarListadoDesdeServidor()">Recargar tareas desde servidor</button>
+</div>
 </body>
 </html>

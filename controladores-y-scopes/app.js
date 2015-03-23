@@ -1,15 +1,19 @@
 var app = angular.module("comportamientoDinamico", []);
 app.controller("Tareas", function($scope, $http){
 
-    $scope.nuevaTarea = "Contenido por defecto";
+    $scope.listadoTareas = [];
+    $scope.nuevaTarea = {};
 
-    $scope.listadoTareas = [{
-        descripcion: "trabajar",
-        realizada: true
-    },{
-        descripcion: "vivir",
-        realizada: false
-    }];
+    $scope.agregarNuevaTarea = function(){
+        $scope.listadoTareas.push($scope.nuevaTarea);
+        $scope.nuevaTarea = {};
+    };
+
+    $scope.eliminarTareasFinalizadas = function(){
+        _.remove($scope.listadoTareas, function(tarea){
+            return tarea.realizada;
+        });
+    };
 
     $scope.actualizarListadoDesdeServidor = function(){
         $http.get("datosFalsos.json").then(function(response){
@@ -17,10 +21,7 @@ app.controller("Tareas", function($scope, $http){
         });
     };
 
-    $scope.agregarNuevaTarea = function(){
-        $scope.listadoTareas.push({ realizada: false, descripcion: $scope.nuevaTarea });
-        $scope.nuevaTarea = "";
-    };
+
 
     window.Tareas = $scope;
 
