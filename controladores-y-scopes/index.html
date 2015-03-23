@@ -11,6 +11,7 @@
     <button ng-click="agregarNuevaTarea()">Agregar tarea</button>
     <br><br><hr>
     <button ng-click="actualizarListadoDesdeServidor()">Recargar listado desde servidor</button>
+    <br>
     <label ng-repeat="tarea in listadoTareas">
         <br><input type="checkbox" ng-model="tarea.realizada">{{tarea.descripcion}}
     </label>
