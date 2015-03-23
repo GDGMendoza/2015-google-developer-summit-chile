@@ -21,8 +21,6 @@ app.controller("Tareas", function($scope, $http){
         });
     };
 
-
-
     window.Tareas = $scope;
 
 });
