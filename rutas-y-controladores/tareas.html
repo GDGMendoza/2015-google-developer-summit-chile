@@ -1,0 +1,16 @@
+<div ng-if="listadoTareas.length">
+    <h1>Listado de tareas!</h1>
+    <ul>
+        <li ng-repeat="tarea in listadoTareas">
+            <label><input type="checkbox" ng-model="tarea.realizada">{{tarea.descripcion}}</label>
+        </li>
+    </ul>
+    <button ng-click="eliminarTareasFinalizadas()">Eliminar finalizadas</button>
+    <br/>
+</div>
+<div>
+    <h1>Nueva tarea:</h1>
+    <label>Descripcion: <input type="text" ng-model="nuevaTarea.descripcion"></label>
+    <button ng-click="agregarNuevaTarea()">Agregar Tarea</button>
+</div>
+<button ng-click="actualizarListadoDesdeServidor()">Recargar tareas desde servidor</button>

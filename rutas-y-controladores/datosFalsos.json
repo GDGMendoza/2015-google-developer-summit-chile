@@ -1,0 +1,26 @@
+[
+  {
+    "descripcion": "Ver videos de egghead.io",
+    "realizada": false
+  },
+  {
+    "descripcion": "Stalkear contenido de Ben Nadel",
+    "realizada": false
+  },
+  {
+    "descripcion": "Analizar artículos de Dan Wahlin",
+    "realizada": false
+  },
+  {
+    "descripcion": "Estudiar guía de estilos de John Papa",
+    "realizada": true
+  },
+  {
+    "descripcion": "Leer ng-book",
+    "realizada": true
+  },
+  {
+    "descripcion": "Aplicar contenido aprendido",
+    "realizada": false
+  }
+]
