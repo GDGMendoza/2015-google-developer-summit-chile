@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="comportamientoDinamico">
+<head>
+    <meta charset="UTF-8">
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="Tareas">
+    <label><input type="text" ng-model="nuevaTarea">{{nuevaTarea}}</label>
+    <br><br>
+    <button ng-click="agregarNuevaTarea()">Agregar tarea</button>
+    <br><br><hr>
+    <button ng-click="actualizarListadoDesdeServidor()">Recargar listado desde servidor</button>
+    <label ng-repeat="tarea in listadoTareas">
+        <br><input type="checkbox" ng-model="tarea.realizada">{{tarea.descripcion}}
+    </label>
+</body>
+</html>
