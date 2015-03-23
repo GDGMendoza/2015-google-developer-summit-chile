@@ -44,7 +44,7 @@ app.controller("EdicionTareaController", function ($scope, $routeParams, $locati
 });
 
 
-app.factory("TareasService", function ($http) {
+app.factory("TareasService", function ($http, $timeout) {
 
     var tareas = [];
 
@@ -59,10 +59,12 @@ app.factory("TareasService", function ($http) {
 
     function initService(){
         $http.get("datosFalsos.json").then(function (response) {
-            tareas.splice(0, tareas.length);
-            _.each(response.data, function(tarea){
-                tareas.push(tarea)
-            });
+            $timeout(function(){
+                tareas.splice(0, tareas.length);
+                _.each(response.data, function(tarea){
+                    tareas.push(tarea)
+                });
+            }, 0);
         });
     }
 
