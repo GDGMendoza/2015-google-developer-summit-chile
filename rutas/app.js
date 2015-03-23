@@ -4,7 +4,8 @@ app.config(function($routeProvider){
         template: 'Página principal<br><a ng-href="#/vista2">Ir a página secundaria</a>'
     });
     $routeProvider.when("/vista2", {
-        template: 'Página secundaria<br><a ng-href="#/">Ir a página principal</a>'
+        templateUrl: 'vista2.html'
+//vista2.html tiene 'Página secundaria<br><a ng-href="#/">Ir a página principal</a>'
     });
     $routeProvider.otherwise({ redirectTo: "/" });
 });
