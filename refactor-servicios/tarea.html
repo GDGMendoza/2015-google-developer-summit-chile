@@ -1,7 +1,10 @@
-<a ng-href="#/">Volver a mainpage</a>
+<h1>Nueva Tarea:</h1>
 <div>
     <input type="checkbox" ng-model="tarea.realizada">
-    <input type="text" ng-model="tarea.descripcion" placeholder="descripcion">
-    <input type="text" ng-model="tarea.contenido" placeholder="contenido">
+    <input type="text" ng-model="tarea.descripcion" placeholder="Descripcion">
+    <input type="text" ng-model="tarea.contenido" placeholder="Contenido">
 </div>
-<button ng-click="guardarTarea()">Guardar cambios!</button>
+<br>
+<button class="btn btn-primary" ng-click="guardarTarea()">Guardar cambios!</button>
+<br><br>
+<a ng-href="#/">Volver a mainpage</a>

@@ -2,12 +2,14 @@
 <html ng-app="comportamientoDinamico">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/lodash/lodash.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
-<div ng-controller="Tareas">
+<div class="container" ng-controller="Tareas">
     <div ng-if="listadoTareas.length">
         <h1>Listado de tareas!</h1>
         <ul>
@@ -15,15 +17,16 @@
                 <label><input type="checkbox" ng-model="tarea.realizada">{{tarea.descripcion}}</label>
             </li>
         </ul>
-        <button ng-click="eliminarTareasFinalizadas()">Eliminar finalizadas</button>
+        <button class="btn btn-danger" ng-click="eliminarTareasFinalizadas()">Eliminar finalizadas</button>
         <br/>
     </div>
     <div>
         <h1>Nueva tarea:</h1>
         <label>Descripcion: <input type="text" ng-model="nuevaTarea.descripcion"></label>
-        <button ng-click="agregarNuevaTarea()">Agregar Tarea</button>
     </div>
-    <button ng-click="actualizarListadoDesdeServidor()">Recargar tareas desde servidor</button>
+    <br>
+    <button class="btn btn-primary" ng-click="agregarNuevaTarea()">Agregar Tarea</button>
+    <button class="btn btn-default" ng-click="actualizarListadoDesdeServidor()">Recargar tareas desde servidor</button>
 </div>
 </body>
 </html>
